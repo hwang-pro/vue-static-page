@@ -86,7 +86,7 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref, computed } from 'vue'
 
-const blessings: string[] = [
+const blessings = [
   '한가위 달빛처럼 당신의 앞날도 환하게 빛나길 바랍니다.',
   '올가을, 수고한 만큼 풍성한 결실이 함께하길 기원해요.',
   '가족의 웃음과 건강이 언제나 곁을 지키길 바랍니다.',
@@ -94,13 +94,15 @@ const blessings: string[] = [
   '마음 따뜻한 인연과 기회가 연등처럼 이어지기를 바랍니다.',
   '지금의 진심이 내일의 행운으로 돌아오길 바랍니다.',
   '달처럼 차오르는 성장과 성취가 가득하길 기도합니다.'
-]
+] as const
+
+type Blessing = typeof blessings[number]
 
 const activeIndex = ref<number>(0)
 const copied = ref<boolean>(false)
 let timer: ReturnType<typeof setInterval> | null = null
 
-const activeBlessing = computed<string>(() => blessings[activeIndex.value])
+const activeBlessing = computed<string>(() => blessings[activeIndex.value] || blessings[0])
 
 function shuffle(): void {
   let next = Math.floor(Math.random() * blessings.length)
