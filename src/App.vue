@@ -96,8 +96,6 @@ const blessings = [
   '달처럼 차오르는 성장과 성취가 가득하길 기도합니다.'
 ] as const
 
-type Blessing = typeof blessings[number]
-
 const activeIndex = ref<number>(0)
 const copied = ref<boolean>(false)
 let timer: ReturnType<typeof setInterval> | null = null
