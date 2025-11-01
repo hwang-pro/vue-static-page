@@ -86,7 +86,7 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref, computed } from 'vue'
 
-const blessings = [
+const blessings: string[] = [
   '한가위 달빛처럼 당신의 앞날도 환하게 빛나길 바랍니다.',
   '올가을, 수고한 만큼 풍성한 결실이 함께하길 기원해요.',
   '가족의 웃음과 건강이 언제나 곁을 지키길 바랍니다.',
@@ -96,19 +96,19 @@ const blessings = [
   '달처럼 차오르는 성장과 성취가 가득하길 기도합니다.'
 ]
 
-const activeIndex = ref(0)
-const copied = ref(false)
-let timer: number | null = null
+const activeIndex = ref<number>(0)
+const copied = ref<boolean>(false)
+let timer: ReturnType<typeof setInterval> | null = null
 
-const activeBlessing = computed(() => blessings[activeIndex.value])
+const activeBlessing = computed<string>(() => blessings[activeIndex.value])
 
-function shuffle() {
+function shuffle(): void {
   let next = Math.floor(Math.random() * blessings.length)
   if (next === activeIndex.value) next = (next + 1) % blessings.length
   activeIndex.value = next
 }
 
-async function copyBlessing() {
+async function copyBlessing(): Promise<void> {
   try {
     await navigator.clipboard.writeText(activeBlessing.value)
     copied.value = true
@@ -120,11 +120,13 @@ async function copyBlessing() {
 }
 
 onMounted(() => {
-  timer = window.setInterval(shuffle, 5000)
+  timer = setInterval(shuffle, 5000)
 })
 
 onUnmounted(() => {
-  if (timer) window.clearInterval(timer)
+  if (timer !== null) {
+    clearInterval(timer)
+  }
 })
 </script>
 
