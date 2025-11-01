@@ -1,5 +1,54 @@
-# Vue 3 + TypeScript + Vite
+# 한가위(추석) 테마 Vue 3 + TypeScript + Vite 페이지
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+**배포 링크**: https://hwang-pro.github.io/vue-static-page/
+(예: GitHub Pages, Vercel, Netlify 등)
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+![preview](public/og-preview.png)
+
+---
+
+## 프로젝트 개요
+
+이 레포는 Vue 3 + TypeScript + Vite 기반의 **한가위(추석) 테마 랜딩 페이지**입니다.  
+메인 카피/섹션 제목/전통 음식·놀이 소개 텍스트는 AI(GPT/Gemini)로 생성했고, 프롬프트 전문을 아래에 공개합니다.  
+생성된 텍스트와 이미지는 **프로젝트 기본 페이지(src/App.vue)**에 반영되어 있습니다.
+
+---
+
+## 한가위(추석) 콘텐츠 (AI 생성 결과)
+
+아래 텍스트는 GPT/Gemini가 생성한 결과이며, 그대로 페이지에 반영했습니다.
+
+### 메인 카피
+> 한가위 보름달처럼 환하게 빛나는 하루 되세요.  
+> 풍요와 안녕이 가득한 추석, 가족과 함께 마음을 나눠요.
+
+### 섹션 제목
+1. **보름달에 비는 소원**
+2. **전통의 맛, 한가위 한 상**
+3. **함께 즐기는 민속놀이**
+4. **감사의 마음 전하기**
+
+### 전통 음식 소개
+- **송편**: 반달 모양의 떡으로, 속에 담긴 소원처럼 한 해의 복을 기원합니다.
+- **전(부침개)**: 다양한 재료를 얇게 부쳐 만든 음식으로, 모여 앉아 함께 굽는 즐거움이 있습니다.
+- **한과**: 꿀과 조청으로 단맛을 더한 전통 과자. 차와 곁들이면 더욱 운치 있습니다.
+
+### 전통 놀이 소개
+- **윷놀이**: 네 개의 윷가락으로 말의 이동을 겨루는 대표 보드게임. 가족 모두가 함께 즐기기 좋아요.
+- **강강술래**: 달 밝은 밤, 손을 잡고 빙글빙글 도는 전통 놀이로, 협동과 흥을 나눕니다.
+- **제기차기**: 발끝으로 제기를 차 올리며 균형과 집중력을 겨룹니다.
+
+> **스토리/짧은 설명**  
+> “보름달이 가장 크고 밝아지는 밤, 우리는 서로의 안부를 묻고 작은 나눔을 약속합니다.  
+> 송편 속 소원처럼, 올가을엔 당신의 노력도 꽉 채워져 돌아오길.”
+
+---
+
+## 생성 프롬프트 공개 (과제 요건)
+
+아래 프롬프트로 GPT/Gemini에게 텍스트 생성을 요청했습니다. **원문 그대로** 공개합니다.
+
+<details>
+<summary>view+ts+vite로 한가위에 잘 어울리는 웹페이지를 하나 만들고 싶은데 app.vue파일 깔쌈하게 하나 만들어 줄래?</summary>
+
